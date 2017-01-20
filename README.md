@@ -1,11 +1,13 @@
 
 # react-native-overlays-android
 
+Just a library to request permissions for drawing overlays in Android. 
+
 ## Getting started
 
 `$ npm install react-native-overlays-android --save`
 
-### Mostly automatic installation
+### Automatic installation
 
 `$ react-native link react-native-overlays-android`
 
@@ -30,9 +32,14 @@
 
 ## Usage
 ```javascript
-import RNOverlaysAndroid from 'react-native-overlays-android';
+import { OverlaysAndroid } from 'react-native-overlays-android';
 
-// TODO: What do with the module?
-RNOverlaysAndroid;
+async function tryRequestOverlay() {
+  let granted = await OverlaysAndroid.requestOverlayPermissions();
+  // do something with granted
+}
+
 ```
   
+## A note about before Marshmallow
+If the device is pre-Marshmallow granted will come back as true without opening the request intent window. If you request the overlay permission and have it in your manifest Android versions before Marshmallow grant it automatically.
