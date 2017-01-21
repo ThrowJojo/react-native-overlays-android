@@ -1,7 +1,7 @@
 
 # react-native-overlays-android
 
-Just a library to request permissions for drawing overlays in Android. This library was mostly wrote in Kotlin, so if you use it(and aren't already using Kotlin) your build times will increase slightly.
+Just a library to request permissions for drawing overlays in Android. This library was mostly wrote in Kotlin, so if you use it(and aren't already using Kotlin in your project) your build times will increase slightly.
 
 ## Getting started
 
@@ -42,4 +42,4 @@ async function tryRequestOverlay() {
 ```
   
 ## A note about before Marshmallow
-If the device is pre-Marshmallow granted will come back as true without opening the request intent window. If you request the overlay permission and have it in your manifest Android versions before Marshmallow grant it automatically.
+Any devices using APIs prior to Marshmallow will grant overlay drawing automatically(if you have the permission in your manifest). In this case, granted will come back in this library as true without opening a request intent window. 
