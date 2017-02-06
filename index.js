@@ -9,6 +9,10 @@ class OverlaysAndroid {
         return await RNOverlaysAndroid.requestOverlayPermissions();
     }
 
+    static async overlaysGranted() {
+        return await RNOverlaysAndroid.overlaysGranted();
+    }
+
 }
 
 module.exports.OverlaysAndroid = OverlaysAndroid;
