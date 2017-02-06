@@ -38,8 +38,16 @@ async function tryRequestOverlay() {
   let granted = await OverlaysAndroid.requestOverlayPermissions();
   // do something with granted
 }
-
 ```
-  
+## Check if overlays have been granted without opening the settings window
+```javascript
+import { OverlaysAndroid } from 'react-native-overlays-android';
+
+async function checkOverlays() {
+  let granted = await OverlaysAndroid.overlaysGranted();
+  // do something with granted
+}
+```
+
 ## A note about before Marshmallow
 Any devices using APIs prior to Marshmallow will grant overlay drawing automatically(if you have the permission in your manifest). In this case, granted will come back in this library as true without opening a request intent window. 
