@@ -1,7 +1,7 @@
 
 # react-native-overlays-android
 
-Just a library to request permissions for drawing overlays in Android. This library was mostly wrote in Kotlin, so if you use it(and aren't already using Kotlin in your project) your build times will increase slightly.
+Just a library to request permissions for drawing overlays in Android. This library was mostly written in Kotlin, so if you use it(and aren't already using Kotlin in your project) your build times will increase slightly. You'll only need this if your React Native project targets a higher SDK version than 22. Any project that targets 22 or lower is automatically granted overlay permissions by the system.
 
 ## Getting started
 
