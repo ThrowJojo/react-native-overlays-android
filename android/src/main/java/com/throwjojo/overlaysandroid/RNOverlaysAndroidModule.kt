@@ -10,7 +10,7 @@ import com.facebook.react.bridge.*
 class RNOverlaysAndroidModule : ReactContextBaseJavaModule, ActivityEventListener {
 
     val reactContext: ReactApplicationContext
-    val REQUEST_CODE_OVERLAYS = 239232
+    val REQUEST_CODE_OVERLAYS = 321
     var permissionPromise: Promise? = null
 
     constructor(reactContext: ReactApplicationContext) : super(reactContext) {
@@ -34,7 +34,7 @@ class RNOverlaysAndroidModule : ReactContextBaseJavaModule, ActivityEventListene
         promise.resolve(overlaysGranted())
     }
 
-    fun overlaysGranted(): Boolean {
+    private fun overlaysGranted(): Boolean {
         return if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) Settings.canDrawOverlays(reactContext) else true
     }
 
